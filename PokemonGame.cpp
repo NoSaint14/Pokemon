@@ -70,13 +70,12 @@ class Enemy : public Base {
 			health = rand() % 300;
 			attack = rand() % 75;
 			defense = rand() % 75;
-			exp = rand() % 100;
+			exp = 1+rand() % 100;
 			expUp = exp;
 		}
 };
 class Battle : public Player, Enemy {
 	public :
-		bool kalah = false;
 		int count=0;
 		void display(Player *player, Enemy *enemy) {
 			cout << "Player Monster : " << player->nama << endl;
@@ -272,7 +271,7 @@ class Battle : public Player, Enemy {
 						else {
 							cout << "New Armor not Equipped" << endl;
 						}
-						break;	
+						break;
 				}
 			}
 			else {
@@ -411,15 +410,15 @@ class Battle : public Player, Enemy {
 				cin.ignore(); cin.ignore();
 				system("CLS");
 				gameOver(player,enemy);
-				kalah = true;
+				return true;
 			}
-			kalah = false;
+			return false;
 		}
-		
+
 };
 
 int main() {
-	//bool kalah = false;
+	bool kalah = false;
 	srand(time(NULL));
 	Player *player=new Player();
 	Enemy *enemy=new Enemy();
@@ -431,7 +430,8 @@ int main() {
 	Awal :
 	cout << "Turn Based Mini Game" << endl;
 	cout << "Masukkan Nama Pemain : ";
-	cin >> name_player; 
+	//cin.ignore();
+	getline(cin, name_player);
 	cout << "Pick Player Monster" << endl;
 	cout << "1. Articuno	Health : 400 Attack : 75  Defense : 75" << endl;
 	cout << "2. Moltres	Health : 400 Attack : 100 Defense : 50" << endl;
@@ -476,10 +476,10 @@ int main() {
 		case 2:
 			system("CLS");
 			enemy->set_enemy(50,100,50);
-			btl.battle(player,enemy);
+			kalah=btl.battle(player,enemy);
 			cin.ignore(); cin.ignore();
-			if(btl.kalah==true){
-				return EXIT_SUCCESS;
+			if(kalah==true){
+				break;
 			}
 			goto Menu;
 			break;
