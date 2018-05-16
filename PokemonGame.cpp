@@ -23,7 +23,7 @@ class Player : public Base {
 			defense = def;
 			exp = 0;
 			expMax=100;
-			level = 99;
+			level = 1;
 		}
 };
 class Enemy : public Base {
@@ -70,7 +70,7 @@ class Enemy : public Base {
 			health = rand() % 300;
 			attack = rand() % 75;
 			defense = rand() % 75;
-			exp = rand() % 100;
+			exp = 1+rand() % 100;
 			expUp = exp;
 		}
 };
@@ -430,7 +430,7 @@ int main() {
 	Awal :
 	cout << "Turn Based Mini Game" << endl;
 	cout << "Masukkan Nama Pemain : ";
-	cin >> name_player;
+	getline(cin, name_player);
 	cout << "Pick Player Monster" << endl;
 	cout << "1. Articuno	Health : 400 Attack : 75  Defense : 75" << endl;
 	cout << "2. Moltres	Health : 400 Attack : 100 Defense : 50" << endl;
