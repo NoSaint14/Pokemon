@@ -430,7 +430,6 @@ int main() {
 	Awal :
 	cout << "Turn Based Mini Game" << endl;
 	cout << "Masukkan Nama Pemain : ";
-	//cin.ignore();
 	getline(cin, name_player);
 	cout << "Pick Player Monster" << endl;
 	cout << "1. Articuno	Health : 400 Attack : 75  Defense : 75" << endl;
