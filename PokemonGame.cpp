@@ -70,7 +70,7 @@ class Enemy : public Base {
 			health = rand() % 300;
 			attack = rand() % 75;
 			defense = rand() % 75;
-			exp = rand() % 100;
+			exp = 1+rand() % 100;
 			expUp = exp;
 		}
 };
@@ -84,8 +84,19 @@ class Battle : public Player, Enemy {
 			cout << "Player Defense : " << player->defense << endl;
 			cout << "Player Level   : " << player->level << endl;
 			cout << "Player Exp     : " << player->exp << endl;
-			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
-			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "  Defense+" << player->armor_stats << endl << endl;
+			if (player->weapon_stats != 0) {
+				cout << "Player Weapon  : " << player->weapon << "	Grade:" << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
+			}
+			else {
+				cout << "Player Weapon  : -" << endl;
+			}
+			if (player->armor_stats != 0) {
+				cout << "Player Armor   : " << player->armor << "	Grade:" << player->armor_grade << "	Defense+" << player->armor_stats << endl << endl;
+			}
+			else {
+				cout << "Player Armor   : -" << endl;
+			}
+			
 		}
 		void gameOver(Player *player, Enemy *enemy) {
 			ofstream fo;
@@ -94,8 +105,18 @@ class Battle : public Player, Enemy {
 			cout << "Player Monster : " << player->nama << endl;
 			cout << "Player Level   : " << player->level << endl;
 			cout << "Player Exp     : " << player->exp << endl;
-			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
-			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "  Defense+" << player->armor_stats << endl;
+			if (player->weapon_stats != 0) {
+				cout << "Player Weapon  : " << player->weapon << "	Grade:" << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
+			}
+			else {
+				cout << "Player Weapon  : -" << endl;
+			}
+			if (player->armor_stats != 0) {
+				cout << "Player Armor   : " << player->armor << "	Grade:" << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+			}
+			else {
+				cout << "Player Armor   : -" << endl;
+			}
 			cout << "Total Monster Killed : " << count << endl;
 			if (count != 0) {
 				fo.open("History.txt",ios::app);
@@ -103,8 +124,18 @@ class Battle : public Player, Enemy {
 				fo << "Player Monster : " << player->nama << endl;
 				fo << "Player Level   : " << player->level << endl;
 				fo << "Player Exp     : " << player->exp << endl;
-				fo << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "    Attack+" << player->weapon_stats << endl;
-				fo << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "    Defense+" << player->armor_stats << endl;
+				if (player->weapon_stats != 0) {
+					fo << "Player Weapon  : " << player->weapon << "	Grade:" << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
+				}
+				else {
+					fo << "Player Weapon  : -" << endl;
+				}
+				if (player->armor_stats != 0) {
+					fo << "Player Armor   : " << player->armor << "	Grade:" << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+				}
+				else {
+					fo << "Player Armor   : -" << endl;
+				}
 				fo << "Total Monster Killed : " << count << endl << endl;
 				fo.close();
 			}
@@ -188,7 +219,13 @@ class Battle : public Player, Enemy {
 								cout << "Stats  : " << "Attack +" << weapon_stats << endl;
 								break;
 						}
-						cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
+						if (player->weapon_stats != 0) {
+							cout << "\nCurrent Player Weapon  : " << player->weapon << "	Grade:" << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
+						}
+						else {
+							cout << "\nCurrent Player Weapon  : -" << endl;
+						}
+						cout << "(Wrong input then equip is not used)" << endl;
 						cout << "Use Weapon?" << endl;
 						cout << "1. Yes	2. No" << endl;
 						cout << "Masukkan Pilihan : ";
@@ -208,7 +245,7 @@ class Battle : public Player, Enemy {
 						drop_armor = 1+rand() % 6;
 						switch(drop_armor) {
 							case 1:
-								armor_name = "Kamui";
+								armor_name = "Kamui Guard";
 								armor_stats = 75+rand() % 26;
 								armor_grade = "Legendary";
 								cout << "Armor  : " << armor_name << endl;
@@ -216,7 +253,7 @@ class Battle : public Player, Enemy {
 								cout << "Stats  : " << "Defense +" << armor_stats << endl;
 								break;
 							case 2:
-								armor_name = "Assault Cuirass";
+								armor_name = "Assault Guard";
 								armor_stats = 50+rand() % 26;
 								armor_grade = "Rare";
 								cout << "Armor  : " << armor_name << endl;
@@ -256,7 +293,13 @@ class Battle : public Player, Enemy {
 								cout << "Stats  : " << "Defense +" << armor_stats << endl;
 								break;
 						}
-						cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "  Defense+" << player->armor_stats << endl;
+						if (player->armor_stats != 0) {
+							cout << "\nCurrent Player Armor   : " << player->armor << "	Grade:" << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+						}
+						else {
+							cout << "\nCurrent Player Armor   : -" << endl;
+						}
+						cout << "(Wrong input then equip is not used)" << endl;
 						cout << "Use Armor?" << endl;
 						cout << "1. Yes	2. No" << endl;
 						cout << "Masukkan Pilihan : ";
