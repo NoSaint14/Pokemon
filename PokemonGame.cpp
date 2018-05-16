@@ -23,7 +23,7 @@ class Player : public Base {
 			defense = def;
 			exp = 0;
 			expMax=100;
-			level = 99;
+			level = 1;
 		}
 };
 class Enemy : public Base {
