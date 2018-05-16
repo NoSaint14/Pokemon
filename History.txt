@@ -1,0 +1,41 @@
+Nama Player    : Daffa Naufal
+Player Monster : Articuno
+Player Level   : 3
+Player Exp     : 236
+Player Weapon  : Excalibur  Grade Rare    Attack+74
+Player Armor   : Kamui  Grade Legendary    Defense+77
+Total Monster Killed : 5
+
+Nama Player    : Daffa
+Player Monster : Articuno
+Player Level   : 1
+Player Exp     : 69
+Player Weapon  : -
+Player Armor   : -
+Total Monster Killed : 1
+
+Nama Player    : Daffa Naufal
+Player Monster : Articuno
+Player Level   : 1
+Player Exp     : 59
+Player Weapon  : -
+Player Armor   : Assault Guard		Grade:Rare	Defense+61
+
+Total Monster Killed : 1
+
+Nama Player    : Daffa Naufal
+Player Monster : Articuno
+Player Level   : 3
+Player Exp     : 262
+Player Weapon  : Excalibur		Grade:Rare	Attack+56
+Player Armor   : Shiva's Guard		Grade:Rare	Defense+74
+Total Monster Killed : 6
+
+Nama Player    : Daffa Naufal
+Player Monster : Articuno
+Player Level   : 5
+Player Exp     : 492
+Player Weapon  : -
+Player Armor   : Kamui Guard	Grade:Legendary	Defense+79
+Total Monster Killed : 9
+
