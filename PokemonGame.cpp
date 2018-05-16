@@ -70,7 +70,7 @@ class Enemy : public Base {
 			health = rand() % 300;
 			attack = rand() % 75;
 			defense = rand() % 75;
-			exp = 1+rand() % 100;
+			exp = rand() % 100;
 			expUp = exp;
 		}
 };
@@ -84,8 +84,8 @@ class Battle : public Player, Enemy {
 			cout << "Player Defense : " << player->defense << endl;
 			cout << "Player Level   : " << player->level << endl;
 			cout << "Player Exp     : " << player->exp << endl;
-			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
-			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "	Defense+" << player->armor_stats << endl << endl;
+			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
+			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "  Defense+" << player->armor_stats << endl << endl;
 		}
 		void gameOver(Player *player, Enemy *enemy) {
 			ofstream fo;
@@ -94,8 +94,8 @@ class Battle : public Player, Enemy {
 			cout << "Player Monster : " << player->nama << endl;
 			cout << "Player Level   : " << player->level << endl;
 			cout << "Player Exp     : " << player->exp << endl;
-			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
-			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+			cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
+			cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "  Defense+" << player->armor_stats << endl;
 			cout << "Total Monster Killed : " << count << endl;
 			if (count != 0) {
 				fo.open("History.txt",ios::app);
@@ -103,8 +103,8 @@ class Battle : public Player, Enemy {
 				fo << "Player Monster : " << player->nama << endl;
 				fo << "Player Level   : " << player->level << endl;
 				fo << "Player Exp     : " << player->exp << endl;
-				fo << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
-				fo << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+				fo << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "    Attack+" << player->weapon_stats << endl;
+				fo << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade   << "    Defense+" << player->armor_stats << endl;
 				fo << "Total Monster Killed : " << count << endl << endl;
 				fo.close();
 			}
@@ -188,7 +188,7 @@ class Battle : public Player, Enemy {
 								cout << "Stats  : " << "Attack +" << weapon_stats << endl;
 								break;
 						}
-						cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "	Attack+" << player->weapon_stats << endl;
+						cout << "Player Weapon  : " << player->weapon << " " << " Grade " << player->weapon_grade << "  Attack+" << player->weapon_stats << endl;
 						cout << "Use Weapon?" << endl;
 						cout << "1. Yes	2. No" << endl;
 						cout << "Masukkan Pilihan : ";
@@ -256,7 +256,7 @@ class Battle : public Player, Enemy {
 								cout << "Stats  : " << "Defense +" << armor_stats << endl;
 								break;
 						}
-						cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "	Defense+" << player->armor_stats << endl;
+						cout << "Player Armor   : " << player->armor << " " << " Grade " << player->armor_grade << "  Defense+" << player->armor_stats << endl;
 						cout << "Use Armor?" << endl;
 						cout << "1. Yes	2. No" << endl;
 						cout << "Masukkan Pilihan : ";
@@ -278,7 +278,7 @@ class Battle : public Player, Enemy {
 				cout << "Player WIN" << endl;
 				cout << "You only get " << enemy->expUp << " exp from monster" << endl;
 				cout << "Press any key to continue" << endl;
-				cin.ignore();cin.ignore();
+				cin.ignore();
 			}
 		}
 		bool battle(Player *player, Enemy *enemy) {
@@ -430,7 +430,7 @@ int main() {
 	Awal :
 	cout << "Turn Based Mini Game" << endl;
 	cout << "Masukkan Nama Pemain : ";
-	getline(cin, name_player);
+	getline(cin,name_player);
 	cout << "Pick Player Monster" << endl;
 	cout << "1. Articuno	Health : 400 Attack : 75  Defense : 75" << endl;
 	cout << "2. Moltres	Health : 400 Attack : 100 Defense : 50" << endl;
@@ -450,7 +450,7 @@ int main() {
 		default:
 			cout << "Input anda salah!" << endl;
 			cout << "Kembali" << endl;
-			cin.ignore();
+			cin.ignore();cin.ignore();
 			system("CLS");
 			goto Awal;
 			break;
