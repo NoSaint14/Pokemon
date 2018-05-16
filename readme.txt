@@ -26,9 +26,9 @@ Grade Common (Attack + random(25-50)) :
 
 Armor List :
 Grade Legendary (Defense + random(75-100)) :
-- Kamui
+- Kamui Guard
 Grade Rare (Defense + random(50-75)) :
-= Assault Cuirass
+= Assault Guard
 - Shiva's Guard
 Grade Common (Defense + random(25-50)) :
 - Blade Mail
